@@ -3,9 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Flavors of the World - Cooking Recipes Worldwide</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+<div id="innerbody">
+    <header>
+        <nav>
+            <img src="img/logoo.png" alt="LOGO">
+            <div id="navOptions">
+                <p id="closeNavOptions" onclick="closeNavOptions()">X</p>
+                <a href="#">RECIPES</a>
+                <a href="#">ABOUT US</a>
+                <a href="#">NEW FLAVORS</a>
+                <a href="#">TESTIMONIALS</a>
+            </div>
+            <div id="hamburger" onclick="openNavOptions()">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </nav>
+        <div>
+            <h1 id="headerTitle">Flavors<br>of the World</h1> <!--make different colors representing flags each time-->
+            <h2 id="headerSubtitle">Cooking Recipes from around the World</h2>
+        </div>
+    </header>
+    <section id="recipes">
+        <h1 class="sectionTitle">RECIPES</h1>
+        <div id="recipeOptions">
+            <div>
+                <label for="recipeCategories">Cuisine:</label>
+                <select name="recipeCategories" id="recipeCategories">
+                    <option value="all">All</option>
+                    <option value="italian">Italian</option>
+                    <option value="french">French</option>
+                    <option value="Japanese">Japanese</option>
+                </select>
+            </div>
+            
+            <div>
+                <label for="sortRecipes">Sort:</label>
+                <select name="sortRecipes" id="sortRecipes">
+                    <option value="1">Time to cook ↓</option>
+                    <option value="2">Time to cook ↑</option>
+                    <option value="3">Difficulty ↓</option>
+                    <option value="4">Difficulty ↑</option>
+                </select>
+            </div>
+            
+        </div>
+        <div id="outerCarousel">
+            <img src="img/left_arrow.png" alt="LEFT ARROW" class="carouselArrow" id="carouselLeftArrow">
+            <div id="carousel">
+                <div class="carouselOption">
+                    <img src="img/food/1.jpg" alt="FOOD">
+                    <h1 id="recipeTitle">Seafood Burger</h1>
+                    <p>Cooking Time: <b>20-30 min</b></p>
+                    <p>Difficulty:</p>
+                    <img src="img/difficulty3.png" alt="DIFFICULTY">
+                    <button>VIEW</button>
+                </div>
+                <div class="carouselOption">
+                    <img src="img/food/1.jpg" alt="FOOD">
+                    <h1 id="recipeTitle">Seafood Burger</h1>
+                    <p>Cooking Time: <b>20-30 min</b></p>
+                    <p>Difficulty:</p>
+                    <img src="img/difficulty3.png" alt="DIFFICULTY">
+                    <button>VIEW</button>
+                </div>
+                <div class="carouselOption">
+                    <img src="img/food/1.jpg" alt="FOOD">
+                    <h1 id="recipeTitle">Seafood Burger</h1>
+                    <p>Cooking Time: <b>20-30 min</b></p>
+                    <p>Difficulty:</p>
+                    <img src="img/difficulty3.png" alt="DIFFICULTY">
+                    <button>VIEW</button>
+                </div>
+                <div class="carouselOption">
+                    <img src="img/food/1.jpg" alt="FOOD">
+                    <h1 id="recipeTitle">Seafood Burger</h1>
+                    <p>Cooking Time: <b>20-30 min</b></p>
+                    <p>Difficulty:</p>
+                    <img src="img/difficulty3.png" alt="DIFFICULTY">
+                    <button>VIEW</button>
+                </div>
+            </div>
+            <img src="img/right_arrow.png" alt="RIGHT ARROW" class="carouselArrow" id="carouselRightArrow">
+        </div>
+    </section>
+
+</div>
+<script src = "js.js"></script>
 </body>
 </html>

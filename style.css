@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+:root{
+    --main-color: #42CBFF;
+    --main-font: 'Montserrat', sans-serif;
+    --title-font:'Hachi Maru Pop';
+}
+body,
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    display:flex;
+    justify-content: center;
+    min-height:100vh;
+    background-color: var(--main-color);
+}
+
+#innerbody{
+    width:100%;
+    max-width:1920px;
+    background-color: red;
+}
+header{
+    min-height:100vh;
+    background:linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)), url(img/header_background.png);
+    background-position: center center;
+    background-size: cover;
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+}
+nav{
+    background-color:white;
+    width:100%;
+    min-height:60px;
+    padding:10px 4%;
+    justify-self:flex-start;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav > img{
+    height:60px;
+}
+#navOptions{
+    position:relative;
+}
+#navOptions > a{
+    font-family: var(--main-font);
+    color:black;
+    text-decoration: none;
+    margin:10px;
+    position:relative;
+    transition: color 0.4s;
+}
+#navOptions > a::before{
+    content:"";
+    position: absolute;
+    left:0;
+    bottom:-2px;
+    height:2px;
+    width:0;
+    background-color: var(--main-color);
+    transition:width 0.6s;
+}
+#navOptions > a:hover{
+    color:var(--main-color);
+}
+#navOptions > a:hover::before{
+    width:100%;
+}
+#closeNavOptions{
+    font-family: var(--main-font);
+    color:white;
+    font-weight:700;
+    position:absolute;
+    right:4%;
+    top:15px;
+    font-size:55px;
+    display:none;
+}
+#hamburger{
+    height:15px;
+    width:25px;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    transition:height 0.3s;
+    display:none;
+}
+#hamburger .bar{
+    background: black;
+    height:2px;
+    width:100%;
+}
+#hamburger:hover{
+    cursor:pointer;
+    height: 17px;
+}
+#headerTitle{
+    font-family:var(--title-font);
+    color:white;
+    text-transform: uppercase;
+    text-align: center;
+    font-size:55px;
+    width:100%;
+}
+#headerSubtitle{
+    color:white;
+    text-align: center;
+    font-family:var(--main-font);
+    font-weight:300;
+    font-size:20px;
+    padding:0 10px;
+}
+
+#recipes{
+    background-color: white;
+    font-family: var(--main-font);
+}
+.sectionTitle{
+    text-transform: uppercase;
+    text-align: center;
+    padding:20px 0;
+    font-size:40px;
+    font-weight:400;
+}
+
+#recipeOptions{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding:0 5%;
+    margin:20px 0;
+}
+#recipeOptions label{
+    font-size:22px;
+    margin-right:5px;
+}
+#recipeOptions select{
+    border:3px solid var(--main-color);
+    color:var(--main-color);
+    background-color: transparent;
+    font-size:22px;
+    border-radius:2px;
+}
+#outerCarousel{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding:0 5px;
+}
+#carousel{
+    display:flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: hidden;
+    background-color: red;
+}
+.carouselArrow{
+    padding:0 15px;
+    width:15vw;
+    transition: transform 0.2s;
+}
+.carouselArrow:hover{
+    cursor:pointer;
+    transform: scale(1.02);
+}
+.carouselOption{
+    margin:0 20px;
+    background-color: gray;
+    padding:10px;
+    border-radius:15px;
+}
+
+.carouselOption:hover{
+    background-color: var(--main-color);
+
+}
+
+.carouselOption img{
+    border-radius:10px;
+}
+@media screen and (max-width:760px){
+    #navOptions{
+        position:fixed;
+        top:0;
+        left:0;
+        height:100vh;
+        width:100vw;
+        background-color: var(--main-color);
+        z-index: 2;
+        display:flex;
+        flex-direction:column;
+        justify-content: space-evenly;
+        align-items: center;
+        opacity:0;
+        pointer-events: none;
+        transition: opacity 0.4s;
+    }
+    #closeNavOptions{
+        display:block;
+    }
+    #navOptions  > a{
+        display:block;
+        color:white;
+        font-weight:500;
+        font-size:clamp(26px, 4vw, 50px);
+        text-decoration: underline;
+    }
+    #hamburger{
+        display:flex;
+    }
+}
