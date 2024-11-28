@@ -6,6 +6,8 @@
 }
 :root{
     --main-color: #42CBFF;
+    --accent-color: #D6AD5B;
+    --accent-hover-color: #9d7e40;
     --main-font: 'Montserrat', sans-serif;
     --title-font:'Hachi Maru Pop';
 }
@@ -24,7 +26,6 @@ body{
 #innerbody{
     width:100%;
     max-width:1920px;
-    background-color: red;
 }
 header{
     min-height:100vh;
@@ -128,6 +129,7 @@ nav > img{
 #recipes{
     background-color: white;
     font-family: var(--main-font);
+    padding:20px 0;
 }
 .sectionTitle{
     text-transform: uppercase;
@@ -169,32 +171,64 @@ nav > img{
     justify-content: flex-start;
     align-items: center;
     overflow: hidden;
-    background-color: red;
 }
 .carouselArrow{
-    padding:0 15px;
     width:15vw;
-    transition: transform 0.2s;
+    padding: 0 1%;
 }
 .carouselArrow:hover{
     cursor:pointer;
-    transform: scale(1.02);
 }
 .carouselOption{
     margin:0 20px;
-    background-color: gray;
     padding:10px;
     border-radius:15px;
+    transition: background-color 0.3s;
 }
-
 .carouselOption:hover{
+    cursor:pointer;
     background-color: var(--main-color);
-
 }
 
-.carouselOption img{
+.carouselOption > img{
     border-radius:10px;
+    width:200px;
 }
+
+.carouselHiddenInfo{
+    opacity:0;
+}
+
+
+.carouselOption:hover .carouselHiddenInfo{
+    transition:opacity 0.4s 0.3s; /* find how to do different transition delays?*/
+    opacity:1; 
+}
+
+.carouselHiddenInfo > p{
+    margin-top:5px;
+}
+.recipeDifficulty{
+    max-width:100px;
+}
+.carouselHiddenInfo button{
+    background-color: var(--accent-color);
+    border:none;
+    padding:10px 0;
+    width:80%;
+    margin:10px auto;
+    color:white;
+    font-family: var(--main-font);
+    font-weight:bold;
+    font-size:20px;
+    border-radius:5px;
+    transition: background-color 0.2s;
+}
+.carouselHiddenInfo button:hover{
+    cursor:pointer;
+    background-color:var(--accent-hover-color);
+}
+
 @media screen and (max-width:760px){
     #navOptions{
         position:fixed;

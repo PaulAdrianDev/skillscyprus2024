@@ -26,12 +26,3 @@ function setRandomColorToTitle(){
 
     document.getElementById("headerTitle").innerHTML = options[x];
 }
-
-setHeightToCarouselOptions();
-function setHeightToCarouselOptions(){
-    let options = document.querySelectorAll(".carouselOption");
-
-    options.forEach((option) =>{
-        option.style.height =  option.querySelector("img").offsetHeight +  option.querySelector("h1").offsetHeight + 20 + "px";
-    });
-}
