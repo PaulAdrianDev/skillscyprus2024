@@ -12,7 +12,8 @@ function openNavOptions(){
     openOverlay(document.getElementById("navOptions"));
 }
 function closeNavOptions(){
-    closeOverlay(document.getElementById("navOptions"));
+    if(window.screen.width <= 760)
+        closeOverlay(document.getElementById("navOptions"));
 }
 
 setRandomColorToTitle();
@@ -26,3 +27,4 @@ function setRandomColorToTitle(){
 
     document.getElementById("headerTitle").innerHTML = options[x];
 }
+

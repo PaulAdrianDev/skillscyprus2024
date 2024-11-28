@@ -5,18 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flavors of the World - Cooking Recipes Worldwide</title>
     <link rel="stylesheet" href="style.css">
+    <meta name="description" content="Cooking Recipes from around the world">
+    <meta name="keywords" content="Cooking, Recipe, Cook, Cuisine, International">
+    <meta name="author" content="Paul Adrian">
 </head>
 <body>
 <div id="innerbody">
     <header>
         <nav>
-            <img src="img/logoo.png" alt="LOGO">
+            <img src="img/toast_friend.png" alt="LOGO">
             <div id="navOptions">
                 <p id="closeNavOptions" onclick="closeNavOptions()">X</p>
-                <a href="#">RECIPES</a>
-                <a href="#">ABOUT US</a>
-                <a href="#">NEW FLAVORS</a>
-                <a href="#">TESTIMONIALS</a>
+                <a href="#recipes" onclick="closeNavOptions()">RECIPES</a>
+                <a href="#aboutUs" onclick="closeNavOptions()">ABOUT US</a>
+                <a href="#newFlavors" onclick="closeNavOptions()">NEW FLAVORS</a>
+                <a href="#testimonials" onclick="closeNavOptions()">TESTIMONIALS</a>
             </div>
             <div id="hamburger" onclick="openNavOptions()">
                 <div class="bar"></div>
@@ -29,6 +32,7 @@
             <h2 id="headerSubtitle">Cooking Recipes from around the World</h2>
         </div>
     </header>
+
     <section id="recipes">
         <h1 class="sectionTitle">RECIPES</h1>
         <div id="recipeOptions">
@@ -110,6 +114,7 @@
             <img src="img/right_arrow.png" alt="RIGHT ARROW" class="carouselArrow" id="carouselRightArrow">
         </div>
     </section>
+
     <section id="aboutUs">
         <h1 class="sectionTitle">About Us</h1>
         <div>
@@ -118,6 +123,7 @@
         </div>
         <img src="img/toast.png" alt="TOAST">
     </section>
+
     <section id="newFlavors">
         <h1 class="sectionTitle">New Flavors!</h1>
         <div class="newFlavor">
@@ -157,6 +163,7 @@
             <img src="img/food/4.jpg" alt="FOOD">
         </div>
     </section>
+
     <section id="testimonials">
         <h1 class="sectionTitle"><span>TOAST</span>-imonials</h1>
         
@@ -174,7 +181,15 @@
             <p><span>"Just incredible."</span> - Pauline</p>
         </div>
     </section>
-    
+
+    <footer>
+        <div>
+            <a href="tel:97979797">+357 97979797</a>
+            <a href="mailto:fotw@toast.com">fotw@toast.com</a>
+        </div>
+        <img src="img/toast_friend.png" alt="TOAST FRIEND">
+        <p id="copyright">©fotw 2024</p>
+    </footer>
 </div>
 <script src = "js.js"></script>
 </body>

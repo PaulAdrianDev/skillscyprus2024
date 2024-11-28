@@ -142,7 +142,9 @@ section{
     font-weight:400;
     width:100%;
 }
+/* GENERAL END */
 
+/* RECIPE START */
 #recipeOptions{
     display:flex;
     flex-direction: row;
@@ -232,7 +234,9 @@ section{
     cursor:pointer;
     background-color:var(--accent-hover-color);
 }
+/* RECIPE END*/
 
+/*ABOUT US START */
 #aboutUs{
     display:flex;
     flex-direction: row;
@@ -254,6 +258,10 @@ section{
     width:30%;
     border-radius:25px;
 }
+
+/*ABOUT US END*/
+
+/* NEW FLAVORS START */
 #newFlavors{
     background-color: var(--main-color);
 }
@@ -294,7 +302,9 @@ section{
     text-align:right;
     box-shadow:9px 9px var(--shadow-color);
 }
+/* NEW FLAVORS END */
 
+/* TESTIMONIALS START */
 #testimonials{
     background-color: var(--main-color);
 }
@@ -336,7 +346,44 @@ section{
     font-weight:600;
     font-size:18px;
 }
+/* TESTIMONIAL END */
 
+/* FOOTER START */
+footer{
+    height:120px;
+    background-color: var(--accent-color);
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:0 30px;
+    position:relative;
+    font-family:var(--main-font);
+    margin-top:100px;
+}
+footer div a{
+    display:block;
+    font-size:20px;
+    color:white;
+    text-decoration: underline;
+    margin:5px 0;
+    text-shadow:2px 2px 0 var(--accent-hover-color);
+    transition:all 0.3s;
+}
+footer div a:hover{
+    font-weight:600;
+}
+footer > img{
+    height:100%;
+}
+#copyright{
+    font-size:12px;
+    position:absolute;
+    left:50%;
+    bottom:5px;
+    transform: translateX(-50%);
+}
+
+/* FOOTER END */
 @keyframes testimonialCarousel{
     0%{
         left:250vh;
