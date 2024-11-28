@@ -126,7 +126,7 @@ nav > img{
     padding:0 10px;
 }
 
-#recipes{
+section{
     background-color: white;
     font-family: var(--main-font);
     padding:20px 0;
@@ -137,6 +137,7 @@ nav > img{
     padding:20px 0;
     font-size:40px;
     font-weight:400;
+    width:100%;
 }
 
 #recipeOptions{
@@ -229,6 +230,73 @@ nav > img{
     background-color:var(--accent-hover-color);
 }
 
+#aboutUs{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-bottom:50px;
+}
+#aboutUs > div{
+    width:40%;
+}
+#aboutUs > div h1{
+    font-size:52px;
+    color:var(--main-color);
+    text-decoration: underline;
+    text-transform: uppercase;
+}
+#aboutUs > img{
+    width:30%;
+    border-radius:25px;
+}
+#newFlavors{
+    background-color: var(--main-color);
+}
+#newFlavors .sectionTitle{
+    color:white;
+    font-weight:800;
+    text-shadow:4px 4px 0 rgb(51, 107, 133);
+}
+.newFlavor{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width:90%;
+    max-width:800px;
+    margin:35px auto;
+    padding:15px 5px;
+    background-color: white;
+    border-radius:20px;
+}
+.newFlavor > img{
+    width:30%;
+    margin:0 15px;
+    border-radius:20px;
+    box-shadow:0 2px 5px gray;
+    transition: all 0.2s;
+}
+.newFlavor > img:hover{
+    cursor:pointer;
+    box-shadow: 0 4px 5px gray;
+    transform:translateY(-2px);
+}
+.newFlavor:not(.flippedFlavor){
+    box-shadow:-9px 9px rgb(51, 107, 133);
+
+}
+.newFlavor.flippedFlavor{
+    text-align:right;
+    box-shadow:9px 9px rgb(51, 107, 133);
+}
+
+#testimonials .sectionTitle span{
+    color:var(--main-color);
+    font-weight:900;
+}
+
 @media screen and (max-width:760px){
     #navOptions{
         position:fixed;
@@ -258,5 +326,19 @@ nav > img{
     }
     #hamburger{
         display:flex;
+    }
+    #aboutUs{
+        display:flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    #aboutUs > div{
+        width:90%;
+        margin:60px 0 25px 0;
+        text-align: center;
+    }
+    #aboutUs > img{
+        width:60%;
     }
 }
