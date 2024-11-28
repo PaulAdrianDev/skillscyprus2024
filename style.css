@@ -8,6 +8,7 @@
     --main-color: #42CBFF;
     --accent-color: #D6AD5B;
     --accent-hover-color: #9d7e40;
+    --shadow-color: rgb(51, 107, 133);
     --main-font: 'Montserrat', sans-serif;
     --title-font:'Hachi Maru Pop';
 }
@@ -26,6 +27,7 @@ body{
 #innerbody{
     width:100%;
     max-width:1920px;
+    overflow-x:hidden;
 }
 header{
     min-height:100vh;
@@ -130,6 +132,7 @@ section{
     background-color: white;
     font-family: var(--main-font);
     padding:20px 0;
+    position:relative;
 }
 .sectionTitle{
     text-transform: uppercase;
@@ -257,7 +260,7 @@ section{
 #newFlavors .sectionTitle{
     color:white;
     font-weight:800;
-    text-shadow:4px 4px 0 rgb(51, 107, 133);
+    text-shadow:4px 4px 0 var(--shadow-color);
 }
 .newFlavor{
     display:flex;
@@ -284,19 +287,72 @@ section{
     transform:translateY(-2px);
 }
 .newFlavor:not(.flippedFlavor){
-    box-shadow:-9px 9px rgb(51, 107, 133);
+    box-shadow:-9px 9px var(--shadow-color);
 
 }
 .newFlavor.flippedFlavor{
     text-align:right;
-    box-shadow:9px 9px rgb(51, 107, 133);
+    box-shadow:9px 9px var(--shadow-color);
 }
 
+#testimonials{
+    background-color: var(--main-color);
+}
+
+#testimonials .sectionTitle{
+    padding:30px 0;
+}
 #testimonials .sectionTitle span{
-    color:var(--main-color);
-    font-weight:900;
+    color:white;
+    font-weight:800;
+    text-shadow:-4px 4px 0 var(--shadow-color);
 }
 
+.testimonial{
+    background-color: white;
+    margin:50px 0;
+    text-align: center;
+    padding:20px;
+    box-shadow:0 5px 0 var(--shadow-color);
+}
+
+.testimonial > h1{
+    color:var(--main-color);
+    font-size:42px;
+    font-weight:900;
+    
+    transition:all 0.2s;
+}
+.testimonial:hover > h1{
+    text-shadow:0 4px var(--shadow-color);
+    transform:translateY(-4px);
+}
+
+.testimonial > p{
+    transition:all 0.2s;
+}
+
+.testimonial > p > span{
+    font-weight:600;
+    font-size:18px;
+}
+
+@keyframes testimonialCarousel{
+    0%{
+        left:250vh;
+    }
+    100%{
+        left:-700vh;
+    }
+}
+@keyframes testimonialCarouselFlipped{
+    0%{
+        transform: translateX(-106%);
+    }
+    100%{
+        transform:translateX(0);
+    }
+}
 @media screen and (max-width:760px){
     #navOptions{
         position:fixed;
