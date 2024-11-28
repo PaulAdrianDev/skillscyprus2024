@@ -12,6 +12,11 @@
     --main-font: 'Montserrat', sans-serif;
     --title-font:'Hachi Maru Pop';
 }
+
+::selection{
+    background-color: var(--main-color);
+    color:white;
+}
 body,
 html{
     scroll-behavior: smooth;
@@ -296,12 +301,13 @@ section{
 }
 .newFlavor:not(.flippedFlavor){
     box-shadow:-9px 9px var(--shadow-color);
-
 }
+
 .newFlavor.flippedFlavor{
     text-align:right;
     box-shadow:9px 9px var(--shadow-color);
 }
+
 /* NEW FLAVORS END */
 
 /* TESTIMONIALS START */
@@ -330,7 +336,6 @@ section{
     color:var(--main-color);
     font-size:42px;
     font-weight:900;
-    
     transition:all 0.2s;
 }
 .testimonial:hover > h1{
