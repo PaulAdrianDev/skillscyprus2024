@@ -213,11 +213,14 @@ function createMealResult(meal){
     let button = document.createElement("button");
     button.innerHTML = "ADD TO FAVORITES";
     button.classList.add("mealAddToFavorites");
+    button.addEventListener("click", function(){ addToFavorites(meal) });
     resultDiv.appendChild(button);
 
     document.getElementById("mealSearchResults").appendChild(resultDiv);
 }
 
-function addToFavorites(id){
+function addToFavorites(meal){
+    console.log(meal);
     
-}
+};
+

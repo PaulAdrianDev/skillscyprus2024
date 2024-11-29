@@ -16,21 +16,20 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore();
 const docRef = doc(db, "Recipes", sessionStorage.getItem("uid"));
 const snap = await getDoc(docRef);
-createFavorites();
 
 
+createFavorites(); // add from firebase user's favorites
 function createFavorites(){
     let recipes = snap.data().Recipes;
     console.log(recipes);
 
     recipes.forEach((recipe) => {
-        createMealResult(recipe);
+        addFavoriteMeal(recipe);
     })
     
 }
 
-
-function createMealResult(meal){
+function addFavoriteMeal(meal){
     
     let resultDiv = document.createElement("div");
     resultDiv.classList.add("favorite");

@@ -570,6 +570,36 @@ footer > img{
 #favorites .favorite button{
     background-color: var(--main-color);
 }
+.loginOrSignup #innerbody{
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: white;
+    padding-top:120px;
+    font-family:var(--main-font);
+}
+.loginOrSignup #innerbody p{
+    margin-top:15px;
+    font-size:22px;
+}
+
+.loginOrSignup button{
+    margin:10px 0;
+    background-color: var(--main-color);
+    color:white;
+    border:none;
+    transition: all 0.3s;
+    padding:15px 35px;
+    font-family:var(--main-font);
+    border-radius:10px;
+}
+
+.loginOrSignup button:hover{
+    cursor:pointer;
+    background-color: var(--shadow-color);
+}
+
 @keyframes specialMealSearchOption{
     0%{
         transform:rotate(0deg);

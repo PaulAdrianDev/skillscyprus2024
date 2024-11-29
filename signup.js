@@ -32,12 +32,13 @@ function signUpUser(){
         const user = userCredential.user;
         console.log(user.accessToken);
         sessionStorage.setItem("uid", user.uid);
-
+        document.location.href = "loggedin.html";
         // ...
     })
     .catch((error) => {
     const errorCode = error.code;
     const errorMessage = error.message;
+    alert(error);
     // ..
     });
 }
