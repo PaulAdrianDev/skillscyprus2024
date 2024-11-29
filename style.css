@@ -14,7 +14,7 @@
 }
 
 ::selection{
-    background-color: var(--main-color);
+    background-color: var(--shadow-color);
     color:white;
 }
 body,
@@ -65,13 +65,15 @@ nav > img{
 }
 #navOptions > a{
     font-family: var(--main-font);
-    color:black;
     text-decoration: none;
     margin:10px;
     position:relative;
-    transition: color 0.4s;
+    transition: all 0.4s;
 }
-#navOptions > a::before{
+#navOptions > a:not(#navSignUp){
+    color:black;
+}
+#navOptions > a:not(#navSignUp)::before{
     content:"";
     position: absolute;
     left:0;
@@ -81,10 +83,10 @@ nav > img{
     background-color: var(--main-color);
     transition:width 0.6s;
 }
-#navOptions > a:hover{
+#navOptions > a:not(#navSignUp):hover{
     color:var(--main-color);
 }
-#navOptions > a:hover::before{
+#navOptions > a:not(#navSignUp):hover::before{
     width:100%;
 }
 #closeNavOptions{
@@ -96,6 +98,15 @@ nav > img{
     top:15px;
     font-size:55px;
     display:none;
+}
+#navSignUp{
+    background-color: var(--main-color);
+    color:white;
+    padding:10px 15px;
+    border-radius:5px;
+}
+#navSignUp:hover{
+    background-color: var(--shadow-color);
 }
 #hamburger{
     height:15px;
@@ -387,22 +398,183 @@ footer > img{
     bottom:5px;
     transform: translateX(-50%);
 }
-
 /* FOOTER END */
-@keyframes testimonialCarousel{
+
+/* LOGGED IN WEBSITE START*/
+
+#mealSearch{
+    background-color: var(--main-color);
+    text-align: center;
+}
+#mealSearch .sectionTitle{
+    color:white;
+    font-weight:900;
+    text-shadow:5px 5px var(--shadow-color);
+}
+#mealSearch > p{
+    font-size:20px;
+    margin-bottom:5px;
+}
+#mealSearchOptions{
+    width:60%;
+    margin:0 auto;
+    position:relative;
+}
+#mealSearchOptions > p{
+    font-size:12px;
+    margin:15px 0;
+}
+.mealSearchOption,
+#mealSearchDiv_Button{
+    border:4px solid white;
+    color:white;
+    background-color: var(--main-color);
+    font-family:'Montserrat';
+    padding:10px 25px;
+    font-size:20px;
+    font-weight:600;
+    margin: 8px 5px;
+    border-radius:10px;
+    transition:all 0.3s;
+    box-shadow:-5px 5px var(--shadow-color);
+}
+
+.mealSearchOption:hover,
+#mealSearchDiv_Button:hover{
+    cursor:pointer;
+    background-color: white;
+    color:var(--main-color);
+    box-shadow:none;
+}
+
+.mealSearchOption.specialMealSearchOption{
+    color:rgb(237, 255, 44);
+    border-color:rgb(237, 255, 44);
+    animation: specialMealSearchOption 1s infinite ease-in-out;
+}
+.mealSearchOption.unavailableMealSearchOption{
+    background-color: gray;
+    border-color:gray;
+    pointer-events: none;
+}
+
+#mealSearchDiv{
+    width:100%;
+    height:500px;
+    padding:50px 0;
+}
+#mealSearchDiv_Title{
+    display:inline;
+    margin-right:10px;
+    color:white;
+    vertical-align: middle;
+    font-size:42px;
+    text-shadow:3px 3px var(--shadow-color);
+}
+#mealSearchDiv_Input{
+    background-color: none;
+    border:4px solid white;
+    color:white;
+    background-color: transparent;
+    padding:5px;
+    font-size:22px;
+    vertical-align: middle;
+    box-shadow: 3px 3px var(--shadow-color);
+}
+#mealSearchDiv_Button{
+    border:3px solid white;
+}
+#mealSearchErrorText{
+    color:red;
+    font-size:20px;
+    font-weight:600;
+    margin-top:10px;
+    display:none;
+}
+
+.imageIngredientsDiv{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: center;
+    align-items: center;
+    margin:30px 0;
+}
+
+.imageIngredientsDiv > div{
+    margin:10px 20px;
+    text-align: left;
+}
+
+#mealSearchResults{
+    padding:50px 0;
+    background-color: var(--main-color);
+}
+.mealSearchResult{
+    margin-bottom:100px;
+    background-color: #9be3ff;
+    padding:30px 0;
+}
+.mealArea,
+.mealCategory,
+.mealMeasurement,
+.mealIngredient{
+    display:inline;
+}
+
+.mealTitle,
+.imageIngredientsDiv > div > h1{
+    color:white;
+    font-weight:900;
+    text-shadow:3px 3px var(--shadow-color);
+    font-size:42px;
+}
+.mealPicture{
+    width:90%;
+    max-width:300px;
+    border-radius:250px;
+    box-shadow:5px 5px var(--shadow-color);
+    margin:10px 0;
+}
+
+.mealInstructions{
+    padding:0 10%;
+    margin:0 auto;
+    font-weight:500;
+}
+.mealAddToFavorites{
+    padding:15px 35px;
+    background-color: var(--accent-color);
+    border:none;
+    color:white;
+    font-weight:600;
+    margin-top:22px;
+    border-radius:10px;
+    font-size:20px;
+    transition:all 0.3s;
+}
+.mealAddToFavorites:hover{
+    cursor:pointer;
+    background-color: var(--accent-hover-color);
+    transform:translateY(-4px);
+    box-shadow:0 4px var(--shadow-color);
+}
+@keyframes specialMealSearchOption{
     0%{
-        left:250vh;
+        transform:rotate(0deg);
+    }
+    33%{
+        transform:rotate(2deg);
+    }
+    66%{
+        transform:rotate(-2deg);
     }
     100%{
-        left:-700vh;
+        transform:rotate(0deg);
     }
 }
-@keyframes testimonialCarouselFlipped{
-    0%{
-        transform: translateX(-106%);
-    }
-    100%{
-        transform:translateX(0);
+@media screen and (max-width:900px){
+    #mealSearchDiv{
+        width:90%;
     }
 }
 @media screen and (max-width:760px){
@@ -431,6 +603,10 @@ footer > img{
         font-weight:500;
         font-size:clamp(26px, 4vw, 50px);
         text-decoration: underline;
+    }
+    #navSignUp{
+        background-color:var(--shadow-color);
+        padding:10px 25px;
     }
     #hamburger{
         display:flex;

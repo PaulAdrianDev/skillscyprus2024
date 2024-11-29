@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flavors of the World - Your Flavors</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="loggedin">
+<div id="innerbody">
+    <header>
+        <nav>
+            <img src="img/toast_friend.png" alt="LOGO">
+            <div id="navOptions">
+                <p id="closeNavOptions" onclick="closeNavOptions()">X</p>
+                <a href="#recipes" onclick="closeNavOptions()">RECIPES</a>
+                <a href="#aboutUs" onclick="closeNavOptions()">ABOUT US</a>
+                <a href="#newFlavors" onclick="closeNavOptions()">NEW FLAVORS</a>
+                <a href="#testimonials" onclick="closeNavOptions()">TESTIMONIALS</a>
+                <a href="signup.html" id="navSignUp">Log Out</a>
+            </div>
+            <div id="hamburger" onclick="openNavOptions()">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </nav>
+        <div>
+            <h1 id="headerTitle"><span style="color:var(--main-color)">YOUR</span><br>Flavors<br>of the World</h1> <!--make different colors representing flags each time-->
+            <h2 id="headerSubtitle">See what you've got saved up</h2>
+        </div>
+    </header>
+
+    <section id="mealSearch">
+        <h1 class="sectionTitle">Meal Search</h1>
+        <p>Search By:</p>
+        <div id="mealSearchOptions">
+            
+        </div>
+        <div id="mealSearchDiv">
+            <h1 id="mealSearchDiv_Title">Name:</h1>
+            <input type="text" placeholder="e.g. Carbonara" id="mealSearchDiv_Input">
+            <br>
+            <button id="mealSearchDiv_Button" onclick="clearResultsAndAPICall(true)">Search</button>
+            <p id="mealSearchErrorText">Oops!! An error has occured.</p>
+        </div>
+        <div id="mealSearchResults">
+            
+        </div>
+    </section>
+</div>   
+<script src="api.js"></script>
+</body>
+</html>
