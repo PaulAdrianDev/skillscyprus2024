@@ -1,6 +1,9 @@
 // default to Name
 let endpoint = "https://www.themealdb.com/api/json/v1/1/search.php?s=";
 createSearchOptions();
+
+let uid = sessionStorage.getItem("uid");
+console.log(uid);
 // add placeholders to option objects
 function createSearchOptions(){
     let options = [
