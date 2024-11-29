@@ -125,18 +125,22 @@ async function apiCall(hasInput){
             document.getElementById("mealSearchErrorText").style.display = "none";
 
             const meals = this.response.meals;
-            console.log(this.response);
-
-            meals.forEach((meal) => {
-                if(meal.strArea)
-                    createMealResult(meal);
-                else{
-                    endpoint = "https://www.themealdb.com/api/json/v1/1/lookup.php?i=" + meal.idMeal;
-                    apiCall(false);
-                }
-            });
-
-            mealSearchResults.scrollIntoView();
+            try{
+                meals.forEach((meal) => {
+                    if(meal.strArea)
+                        createMealResult(meal);
+                    else{
+                        endpoint = "https://www.themealdb.com/api/json/v1/1/lookup.php?i=" + meal.idMeal;
+                        apiCall(false);
+                    }
+                });
+    
+                mealSearchResults.scrollIntoView();
+            }
+            catch{
+                alert("An error has occurred.");
+            }
+            
         }
         else if(this.readyState == 4 && this.status != 200)
             document.getElementById("mealSearchErrorText").style.display = "block";
