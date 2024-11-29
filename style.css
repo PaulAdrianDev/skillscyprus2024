@@ -406,7 +406,8 @@ footer > img{
     background-color: var(--main-color);
     text-align: center;
 }
-#mealSearch .sectionTitle{
+#mealSearch .sectionTitle,
+#favorites .sectionTitle{
     color:white;
     font-weight:900;
     text-shadow:5px 5px var(--shadow-color);
@@ -557,6 +558,17 @@ footer > img{
     background-color: var(--accent-hover-color);
     transform:translateY(-4px);
     box-shadow:0 4px var(--shadow-color);
+}
+#favorites{
+    text-align: center;
+    background-color: var(--main-color);
+}
+.favorite{
+    padding:30px 0;
+    background-color: var(--accent-color);
+}
+#favorites .favorite button{
+    background-color: var(--main-color);
 }
 @keyframes specialMealSearchOption{
     0%{
